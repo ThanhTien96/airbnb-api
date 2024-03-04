@@ -1,0 +1,9 @@
+version = 1
+driver = "postgres"
+scheme = "postgres"
+user = "postgres"
+password = "postgres"
+host = "postgres"
+port = "postgres"
+name = "postgres"
+params = "postgres"
