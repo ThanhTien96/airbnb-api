@@ -4,6 +4,6 @@ scheme = "postgres"
 user = "postgres"
 password = "postgres"
 host = "postgres"
-port = "postgres"
+port = 5432
 name = "postgres"
 params = "postgres"

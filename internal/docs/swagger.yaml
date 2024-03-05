@@ -1,0 +1,285 @@
+definitions:
+  models.CreateGenreRequest:
+    properties:
+      gen_title:
+        type: string
+    type: object
+  models.CreateMovieRequest:
+    properties:
+      mov_dt_rel:
+        type: integer
+      mov_lang:
+        type: string
+      mov_rel_country:
+        type: string
+      mov_time:
+        type: integer
+      mov_title:
+        type: string
+      mov_year:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /genres:
+    delete:
+      consumes:
+        - application/json
+      description: Delete Genres
+      operationId: delete-genres
+      parameters:
+        - description: gen_ids
+          in: query
+          items:
+            type: integer
+          name: gen_ids
+          required: true
+          type: array
+      produces:
+        - application/json
+      responses: {}
+      summary: Delete Genres
+      tags:
+        - Genre
+    get:
+      consumes:
+        - application/json
+      description: Get Genres
+      operationId: get-genres
+      parameters:
+        - description: limit
+          in: query
+          name: limit
+          type: integer
+        - description: page
+          in: query
+          name: page
+          type: integer
+        - description: sorts
+          in: query
+          items:
+            type: string
+          name: sorts
+          type: array
+      produces:
+        - application/json
+      responses: {}
+      summary: Get Genres
+      tags:
+        - Genre
+    post:
+      consumes:
+        - application/json
+      description: Create Genre
+      operationId: create-genre
+      parameters:
+        - description: GenreCreateRequest
+          in: body
+          name: GenreCreateRequest
+          required: true
+          schema:
+            $ref: "#/definitions/models.CreateGenreRequest"
+      produces:
+        - application/json
+      responses: {}
+      summary: Create Genre
+      tags:
+        - Genre
+  /genres/{gen_id}:
+    delete:
+      consumes:
+        - application/json
+      description: Delete Genre
+      operationId: delete-genre
+      parameters:
+        - description: gen_id
+          in: path
+          name: gen_id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses: {}
+      summary: Delete Genre
+      tags:
+        - Genre
+    get:
+      consumes:
+        - application/json
+      description: Get Genre
+      operationId: get-genre
+      parameters:
+        - description: gen_id
+          in: path
+          name: gen_id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses: {}
+      summary: Get Genre
+      tags:
+        - Genre
+    put:
+      consumes:
+        - application/json
+      description: Update Genre
+      operationId: update-genre
+      parameters:
+        - description: gen_id
+          in: path
+          name: gen_id
+          required: true
+          type: integer
+        - description: GenreCreateRequest
+          in: body
+          name: GenreCreateRequest
+          required: true
+          schema:
+            $ref: "#/definitions/models.CreateGenreRequest"
+      produces:
+        - application/json
+      responses: {}
+      summary: Update Genre
+      tags:
+        - Genre
+  /movies:
+    delete:
+      consumes:
+        - application/json
+      description: Delete Movies
+      operationId: delete-movies
+      parameters:
+        - description: mov_ids
+          in: query
+          items:
+            type: integer
+          name: mov_ids
+          required: true
+          type: array
+      produces:
+        - application/json
+      responses: {}
+      summary: Delete Movies
+      tags:
+        - Movie
+    get:
+      consumes:
+        - application/json
+      description: Get Movies
+      operationId: get-movies
+      parameters:
+        - description: limit
+          in: query
+          name: limit
+          type: integer
+        - description: page
+          in: query
+          name: page
+          type: integer
+        - description: start_date
+          in: query
+          name: start_date
+          type: integer
+        - description: end_date
+          in: query
+          name: end_date
+          type: integer
+        - description: sorts
+          in: query
+          items:
+            type: string
+          name: sorts
+          type: array
+        - description: search
+          in: query
+          name: search
+          type: string
+        - description: filters
+          in: query
+          name: filters
+          type: string
+      produces:
+        - application/json
+      responses: {}
+      summary: Get Movies
+      tags:
+        - Movie
+    post:
+      consumes:
+        - application/json
+      description: Create Movie
+      operationId: create-movie
+      parameters:
+        - description: MovieCreateRequest
+          in: body
+          name: MovieCreateRequest
+          required: true
+          schema:
+            $ref: "#/definitions/models.CreateMovieRequest"
+      produces:
+        - application/json
+      responses: {}
+      summary: Create Movie
+      tags:
+        - Movie
+  /movies/{mov_id}:
+    delete:
+      consumes:
+        - application/json
+      description: Delete Movie
+      operationId: delete-movie
+      parameters:
+        - description: mov_id
+          in: path
+          name: mov_id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses: {}
+      summary: Delete Movie
+      tags:
+        - Movie
+    get:
+      consumes:
+        - application/json
+      description: Get Movie
+      operationId: get-movie
+      parameters:
+        - description: mov_id
+          in: path
+          name: mov_id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses: {}
+      summary: Get Movie
+      tags:
+        - Movie
+    put:
+      consumes:
+        - application/json
+      description: Update Movie
+      operationId: update-movie
+      parameters:
+        - description: mov_id
+          in: path
+          name: mov_id
+          required: true
+          type: integer
+        - description: MovieCreateRequest
+          in: body
+          name: MovieCreateRequest
+          required: true
+          schema:
+            $ref: "#/definitions/models.CreateMovieRequest"
+      produces:
+        - application/json
+      responses: {}
+      summary: Update Movie
+      tags:
+        - Movie
+swagger: "2.0"
